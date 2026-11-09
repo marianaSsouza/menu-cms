@@ -1,4 +1,5 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom"
+import { CategoriesPage } from "@/pages/categories-page"
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <main className="px-6 py-4">
         <Routes>
           <Route path="/" element={<Navigate to="/categorias" replace />} />
-          <Route path="/categorias" element={<h1>Categorias</h1>} />
+          <Route path="/categorias" element={<CategoriesPage />} />
           <Route path="/produtos" element={<h1>Produtos</h1>} />
           <Route path="/mesas" element={<h1>Mesas</h1>} />
           <Route path="/comandas" element={<h1>Comandas</h1>} />
