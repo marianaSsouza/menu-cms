@@ -1,6 +1,7 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom"
 import { CategoriesPage } from "@/pages/categories-page"
-
+import { ProductsPage } from "./pages/products-page"
+import { Toaster } from "@/components/ui/sonner"
 function App() {
   return (
     <>
@@ -17,11 +18,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/categorias" replace />} />
           <Route path="/categorias" element={<CategoriesPage />} />
-          <Route path="/produtos" element={<h1>Produtos</h1>} />
+          <Route path="/produtos" element={<ProductsPage />} />
           <Route path="/mesas" element={<h1>Mesas</h1>} />
           <Route path="/comandas" element={<h1>Comandas</h1>} />
         </Routes>
       </main>
+      <Toaster />
     </>
   )
 }
