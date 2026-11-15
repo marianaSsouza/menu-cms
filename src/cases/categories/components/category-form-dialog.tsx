@@ -81,7 +81,12 @@ export function CategoryFormDialog({ open, onOpenChange, category }: CategoryFor
         <div className="grid gap-4">
           <div className="grid gap-2">
             <Label htmlFor="name">Nome</Label>
-            <Input id="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <Input
+              id="name"
+              maxLength={60}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
 
           <div className="grid gap-2">

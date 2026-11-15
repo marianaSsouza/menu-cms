@@ -1,6 +1,7 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom"
 import { CategoriesPage } from "@/pages/categories-page"
 import { ProductsPage } from "./pages/products-page"
+import { SpotsPage } from "./pages/spots-page"
 import { GuestChecksPage } from "./pages/guest-checks-page"
 import { Toaster } from "sonner"
 
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<Navigate to="/categorias" replace />} />
           <Route path="/categorias" element={<CategoriesPage />} />
           <Route path="/produtos" element={<ProductsPage />} />
-          <Route path="/mesas" element={<h1>Mesas</h1>} />
+          <Route path="/mesas" element={<SpotsPage />} />
           <Route path="/comandas" element={<GuestChecksPage />} />
         </Routes>
       </main>

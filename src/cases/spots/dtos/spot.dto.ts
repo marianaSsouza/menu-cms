@@ -1,7 +1,5 @@
-
-export interface SpotDTO {
-    id: string;
-    name: string;  
-    active: boolean;
-
+export interface SpotDto {
+  id: string;
+  name: string;
+  active: boolean;
 }
