@@ -1,7 +1,9 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom"
 import { CategoriesPage } from "@/pages/categories-page"
 import { ProductsPage } from "./pages/products-page"
-import { Toaster } from "@/components/ui/sonner"
+import { GuestChecksPage } from "./pages/guest-checks-page"
+import { Toaster } from "sonner"
+
 function App() {
   return (
     <>
@@ -20,7 +22,7 @@ function App() {
           <Route path="/categorias" element={<CategoriesPage />} />
           <Route path="/produtos" element={<ProductsPage />} />
           <Route path="/mesas" element={<h1>Mesas</h1>} />
-          <Route path="/comandas" element={<h1>Comandas</h1>} />
+          <Route path="/comandas" element={<GuestChecksPage />} />
         </Routes>
       </main>
       <Toaster />
