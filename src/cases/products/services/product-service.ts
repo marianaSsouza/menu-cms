@@ -6,15 +6,18 @@ import type { UpdateProductDto } from "../dtos/update-product.dto"
 const ENDPOINT = "/products"
 
 export const ProductService = {
-    async listAll(): Promise<ProductDto[]> {
-        const result = await api.get<ProductDto[]>(ENDPOINT)
+    // o back filtra por categoria quando recebe ?categoryId=
+    async listAll(categoryId?: string): Promise<ProductDto[]> {
+        const result = await api.get<ProductDto[]>(ENDPOINT, {
+            params: { categoryId }
+        })
         return result.data
     },
     async findOne(id: string): Promise<ProductDto> {
         const result = await api.get<ProductDto>(`${ENDPOINT}/${id}`)
         return result.data
     },
-     async create(product: CreateProductDto): Promise<ProductDto> {
+    async create(product: CreateProductDto): Promise<ProductDto> {
         const result = await api.post<ProductDto>(ENDPOINT, product)
         return result.data
     },

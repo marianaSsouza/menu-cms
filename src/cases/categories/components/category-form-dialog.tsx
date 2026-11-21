@@ -37,6 +37,9 @@ export function CategoryFormDialog({ open, onOpenChange, category }: CategoryFor
     if (!name.trim()) {
       return setError("Informe o nome da categoria.")
     }
+    if (icon.trim() && !/^https?:\/\//.test(icon.trim())) {
+      return setError("O ícone deve ser uma URL começando com http:// ou https://.")
+    }
 
     setError("")
 
@@ -90,10 +93,10 @@ export function CategoryFormDialog({ open, onOpenChange, category }: CategoryFor
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="icon">Ícone</Label>
+            <Label htmlFor="icon">URL do ícone</Label>
             <Input
               id="icon"
-              placeholder="Ex.: 🍔"
+              placeholder="https://..."
               value={icon}
               onChange={(e) => setIcon(e.target.value)}
             />

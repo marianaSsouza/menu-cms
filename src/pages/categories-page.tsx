@@ -96,7 +96,17 @@ export function CategoriesPage() {
           <TableBody>
             {categories.map((category) => (
               <TableRow key={category.id}>
-                <TableCell>{category.icon ?? "—"}</TableCell>
+                <TableCell>
+                  {category.icon ? (
+                    <img
+                      src={category.icon}
+                      alt={category.name}
+                      className="h-8 w-8 object-contain"
+                    />
+                  ) : (
+                    <span className="text-muted-foreground">—</span>
+                  )}
+                </TableCell>
                 <TableCell>{category.name}</TableCell>
                 <TableCell>
                   <Badge variant={category.active ? "default" : "secondary"}>
